@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điều hướng trang</title>
+    <style>
+        /* Ẩn nội dung ban đầu */
+        .content {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu điều hướng -->
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showContent('home')">Home</a></li>
+            <li><a href="#" onclick="showContent('about')">About</a></li>
+            <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Nội dung các trang -->
+    <div id="home" class="content">
+        <h1><strong>Đây là nội dung trang chủ</strong></h1>
+        <p>Đây là nội dung trang chủ.</p>
+    </div>
+
+    <div id="about" class="content">
+        <h1><strong>Đây là tiêu đề trang giới thiệu</strong></h1>
+        <p>Nội dung trang giới thiệu.</p>
+    </div>
+
+    <div id="contact" class="content">
+        <h1><strong>Đây là tiêu đề trang liên hệ</strong></h1>
+        <p>Đây là nội dung liên hệ.</p>
+    </div>
+
+    <script>
+        // Hàm để hiển thị nội dung trang khi nhấp vào menu
+        function showContent(page) {
+            // Ẩn tất cả các nội dung trước
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+
+            // Hiển thị nội dung của trang đã chọn
+            var selectedContent = document.getElementById(page);
+            if (selectedContent) {
+                selectedContent.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
